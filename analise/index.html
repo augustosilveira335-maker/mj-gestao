@@ -110,6 +110,7 @@ b,strong{font-weight:650}
 .navpill a:hover{background:var(--bg2)}
 .navpill a.on{background:var(--ink);color:var(--bg)}
 .navpill a.on span{color:var(--or2)}
+@media(min-width:700px){.navpill{flex-wrap:wrap;justify-content:center;overflow:visible;border-radius:26px;max-width:min(1240px,100%)}}
 
 /* ---------- seções ---------- */
 section{position:relative;padding-block:clamp(72px,9vw,120px)}
@@ -868,6 +869,8 @@ footer i{font-style:normal;color:var(--or2)}
   ['pergunta','placar','mercado'].forEach(function(id){ io.observe(document.getElementById(id)); });
 
   var links = [].slice.call(document.querySelectorAll('.navpill a'));
+  var np = document.querySelector('.navpill');
+  np.addEventListener('wheel', function(ev){ if (np.scrollWidth > np.clientWidth + 2 && Math.abs(ev.deltaY) > Math.abs(ev.deltaX)) { np.scrollLeft += ev.deltaY; ev.preventDefault(); } }, {passive:false});
   var io2 = new IntersectionObserver(function(ents){
     ents.forEach(function(e){
       if (!e.isIntersecting) return;
