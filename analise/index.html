@@ -9,7 +9,7 @@
 <meta property="og:title" content="Análise Anvil · MJ Gestão">
 <meta property="og:description" content="Quando o dono de posto procura, a MJ não aparece. O diagnóstico e o plano para mudar isso.">
 <meta name="theme-color" content="#F5F1E6">
-<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__mjOk)document.documentElement.classList.remove('js')},4000);</script>
+<script>document.documentElement.classList.add('js');window.__abreCedo=setTimeout(function(){var e=document.getElementById('abertura');if(e)e.classList.add('fora')},1900);setTimeout(function(){if(!window.__mjOk)document.documentElement.classList.remove('js')},4000);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@100..125,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -120,7 +120,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 /* abertura */
 #abertura{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;place-items:center;transition:opacity .7s ease,visibility .7s}
-.js #abertura{display:grid;animation:abSome .7s 3.4s forwards}
+.js #abertura{display:grid;animation:abSome .7s 2.4s forwards}
 @keyframes abSome{to{opacity:0;visibility:hidden}}
 #abertura::before{content:"";position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(circle,rgba(232,83,29,.28),transparent 62%);filter:blur(10px)}
 #abertura.fora{opacity:0;visibility:hidden}
